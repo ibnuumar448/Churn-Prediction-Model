@@ -49,5 +49,4 @@ To run this project locally on your machine:
 
 **1. Clone the repository:**
 ```bash
-git clone [https://github.com/YourUsername/SentimentGuard.git](https://github.com/YourUsername/SentimentGuard.git)
-cd SentimentGuard
+https://github.com/ibnuumar448/Churn-Prediction-Model.git
