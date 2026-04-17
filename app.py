@@ -7,12 +7,12 @@ st.set_page_config(page_title="Customer Review Analyzer", page_icon="🌟", layo
 # 2. Load the AI Brain
 @st.cache_resource
 def load_model():
-    return joblib.load('review_rescue_model.pkl')
+    return joblib.load('churn_prediction_model.pkl')
 
 model = load_model()
 
 # 3. Build the User Interface (Simple & Business-Focused)
-st.title("🌟 Customer Review Analyzer")
+st.title("Customer Review Analyzer")
 st.markdown("### *Keep your customers happy and prevent churn.*")
 st.write("Paste a recent customer review below to instantly check if they need a follow-up or a discount offer.")
 
