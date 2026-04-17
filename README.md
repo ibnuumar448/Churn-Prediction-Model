@@ -17,7 +17,6 @@ In the highly competitive retail and digital service sectors, businesses generat
 * **High-Recall Detection:** Tuned specifically to catch critical churn risks with a 91% recall rate.
 
 ## 📸 Application Demo
-*(Replace these placeholders with the actual screenshots of your Streamlit app!)*
 
 ![Screenshot 1](link-to-your-safe-screenshot.png) 
 > *Figure 1: The model correctly classifying a positive review and logging a safe status.*
