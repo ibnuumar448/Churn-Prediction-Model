@@ -7,7 +7,7 @@ st.set_page_config(page_title="NLP Churn Predictor", page_icon="⚙️", layout=
 # 2. Load the AI Brain
 @st.cache_resource
 def load_model():
-    return joblib.load('review_rescue_model.pkl')
+    return joblib.load('churn_prediction_model.pkl')
 
 model = load_model()
 
