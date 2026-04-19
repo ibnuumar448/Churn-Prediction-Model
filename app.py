@@ -15,6 +15,8 @@ st.set_page_config(
 # -----------------------------
 @st.cache_resource
 def load_model():
+    # NOTE: Make sure this filename perfectly matches the file in your GitHub repo!
+    # If your file is still named 'review_rescue_model.pkl', change it here.
     return joblib.load('churn_prediction_model.pkl')
 
 model = load_model()
@@ -52,31 +54,11 @@ if st.button("Analyze", use_container_width=True):
         col1, col2 = st.columns([1, 3])
 
         # -----------------------------
-        # CHURN CASE
+        # SAFE CASE (Class 1 = Positive)
         # -----------------------------
         if prediction == 1:
             with col1:
-                st.image(
-                    "https://cdn-icons-png.flaticon.com/512/190/190411.png",
-                    width=80
-                )
-
-            with col2:
-                st.error("Customer may churn ⚠️")
-                st.write(f"Confidence: **{confidence:.2f}%**")
-
-                st.markdown("### 💬 Suggested Response")
-                st.warning(
-                    "We're really sorry for your experience. Your feedback is important to us. "
-                    "As a token of apology, we'd like to offer you a discount on your next purchase. "
-                    "We are committed to improving our service."
-                )
-
-        # -----------------------------
-        # SAFE CASE
-        # -----------------------------
-        else:
-            with col1:
+                # Happy icon
                 st.image(
                     "https://cdn-icons-png.flaticon.com/512/190/190411.png",
                     width=80
@@ -90,4 +72,26 @@ if st.button("Analyze", use_container_width=True):
                 st.info(
                     "Thank you for your valuable feedback! We're glad you're having a great experience. "
                     "We truly appreciate your support and look forward to serving you even better."
+                )
+
+        # -----------------------------
+        # CHURN CASE (Class 0 = Negative)
+        # -----------------------------
+        else:
+            with col1:
+                # Sad/Angry icon
+                st.image(
+                    "https://cdn-icons-png.flaticon.com/512/190/190406.png",
+                    width=80
+                )
+
+            with col2:
+                st.error("Customer may churn ⚠️")
+                st.write(f"Confidence: **{confidence:.2f}%**")
+
+                st.markdown("### 💬 Suggested Response")
+                st.warning(
+                    "We're really sorry for your experience. Your feedback is important to us. "
+                    "As a token of apology, we'd like to offer you a discount on your next purchase. "
+                    "We are committed to improving our service."
                 )
