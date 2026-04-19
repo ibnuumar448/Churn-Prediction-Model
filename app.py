@@ -52,4 +52,5 @@ if st.button("Initialize NLP Pipeline", type="primary"):
                 st.error("🔴 **CLASS 0: CHURN RISK (NEGATIVE SENTIMENT)**")
                 st.write("**Analysis:** Lexical weights indicate a critical risk of customer attrition. Immediate retention protocol recommended.")
                 st.write(f"*Pipeline Confidence: {confidence:.2f}%*")
- 
+        
+        
